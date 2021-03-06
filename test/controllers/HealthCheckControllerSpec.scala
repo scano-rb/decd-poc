@@ -10,7 +10,7 @@ class HealthCheckControllerSpec extends PlaySpec with BeforeAndAfter {
   private val subject = new HealthCheckController(Helpers.stubControllerComponents())
 
   "HealthCheckController" should {
-    "return healthcheck response" in {
+    "return healthCheck response" in {
 
       val result = subject.healthCheck().apply(FakeRequest())
 
