@@ -1,11 +1,10 @@
 package controllers
 
-import org.scalatest.BeforeAndAfter
 import org.scalatestplus.play.PlaySpec
 import play.api.test.Helpers._
 import play.api.test._
 
-class HealthCheckControllerSpec extends PlaySpec with BeforeAndAfter {
+class HealthCheckControllerSpec extends PlaySpec {
 
   private val subject = new HealthCheckController(Helpers.stubControllerComponents())
 
