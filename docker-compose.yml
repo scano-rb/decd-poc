@@ -17,12 +17,6 @@ services:
     ports:
       - 45432:5432
 
-  dp-adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8083:8080
-
   dp-zookeeper:
     image: wurstmeister/zookeeper
     ports:
