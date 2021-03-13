@@ -24,7 +24,6 @@ libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-effect" % "2.1.2",
   // DB
   "com.typesafe.play" %% "play-slick"            % playSlickVersion,
-  "com.typesafe.play" %% "play-slick-evolutions" % playSlickVersion,
   "org.postgresql"    % "postgresql"  % postgresVersion,
   // test
   "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
