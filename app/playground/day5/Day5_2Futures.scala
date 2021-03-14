@@ -1,6 +1,6 @@
-package playground
+package playground.day5
 
-import playground.Day5_1Monads.{User, userId}
+import playground.day5.Day5_1Monads.User
 
 import java.util.concurrent.Executors
 import scala.concurrent.{ExecutionContext, Future}
@@ -26,6 +26,8 @@ object Day5_2Futures {
 
   // instanciamos nuestro pool de threads
   implicit val executionContext = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(7))
+
+  val userId = 3
 
   // aca solamente se instanció asi para mostrar que el executionContext es un pool the threads
   // (tranquilamente pueden importar scala.concurrent.ExecutionContext.Implicits.global y está bien)

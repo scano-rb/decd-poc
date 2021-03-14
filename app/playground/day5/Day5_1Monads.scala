@@ -1,8 +1,4 @@
-package playground
-
-import java.util.concurrent.Executors
-import scala.concurrent.{ExecutionContext, Future}
-import scala.util.{Failure, Success}
+package playground.day5
 
 object Day5_1Monads extends App {
 
