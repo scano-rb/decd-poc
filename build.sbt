@@ -13,6 +13,7 @@ lazy val postgresVersion  = "42.2.2"
 
 libraryDependencies ++= Seq(
   guice,
+  ws,
   // Json
   "com.dripower" %% "play-circe"           % "2812.0",
   "io.circe"     %% "circe-core"           % circeVersion,
