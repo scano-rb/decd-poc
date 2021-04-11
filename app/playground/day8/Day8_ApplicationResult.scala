@@ -1,7 +1,6 @@
 package playground.day8
 
 import akka.Done
-import akka.Done.done
 import globals.ApplicationResult
 import models.errors._
 import playground.day8.SupportApi_8.getUserFromDBThatAlwaysFails
@@ -11,20 +10,19 @@ import java.time.LocalDateTime
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
-object Day8_MonadTransformers {
+object Day8_ApplicationResult {
   val operationResult: Either[ApplicationError, User] = getUserFromDBThatAlwaysFails(2)
 
   operationResult.fold(
     error =>
-      error match {               // puede pattern matchear sobre los diferentes tipos y decidir qué accion tomar
-        case _: DataBaseError => ???
-        case EmptyResponse => ???
-        case _: ClientError => ???
+      error match { // puede pattern matchear sobre los diferentes tipos y decidir qué accion tomar
+        case _: DataBaseError     => ???
+        case EmptyResponse        => ???
+        case _: ClientError       => ???
         case ExternalServiceError => ???
-      },
+    },
     user => ()
   )
-
 
 }
 
@@ -50,6 +48,8 @@ object SupportApi_8_2 {
 
   def encryptData(password: String): Future[Either[ApplicationError, String]] = ???
 
+  def updatePassword(userId: Long, encryptedPass: String): Future[Either[ApplicationError, Done]] = ???
+
   def notifyUserUpdate(message: PasswordUpdateMsg): Future[Either[ApplicationError, Done]] = ???
 }
 
@@ -64,6 +64,8 @@ object SupportApi_8_3 {
   def getUserFromDB(id: Long): ApplicationResult[User] = ???
 
   def encryptData(password: String): ApplicationResult[String] = ???
+
+  def updatePassword(userId: Long, encryptedPass: String): ApplicationResult[Done] = ???
 
   def notifyUserUpdate(message: PasswordUpdateMsg): ApplicationResult[Done] = ???
 }
