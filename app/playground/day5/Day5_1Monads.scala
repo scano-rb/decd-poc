@@ -23,7 +23,8 @@ object Day5_1Monads extends App {
     .flatMap(value => Option(value * 2))
     .flatMap(value => Option(value * 2))
     .flatMap(value => Option(value * 2))
-    .flatMap(value => Option(value * 2))
+    .flatMap(value => Option(value.toString))
+    .flatMap(value => Option(value.toUpperCase))
 
   // Ejemplo 2 - Option: imaginemos que tenemos una case class User y los siguientes métodos de negocio
   case class User(id: Long, username: String, email: String, password: String)
