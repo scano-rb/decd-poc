@@ -13,6 +13,6 @@ class Module(environment: Environment, configuration: Configuration) extends Abs
   @Provides
   def creditCardApiConfiguration: CreditCardApiConfiguration =
     CreditCardApiConfiguration(
-      url = configuration.get(CREDIT_CARD_API_URL)
+      url = configuration.get[String](CREDIT_CARD_API_URL)
     )
 }
